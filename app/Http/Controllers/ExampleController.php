@@ -36,8 +36,11 @@ class ExampleController extends Controller
     {
         $data=$request->validate([
             'name'=>'required|string',
-            'content'=>'string'
-        ],['name'=>'The Title field must be filled','content'=>'The description field must be string']);
+            'content'=>'string',
+            'status2'=>'required|in:enable,disable',
+            'show'=>'required|in:1,0',
+        ],['name'=>'The Title field must be filled','content'=>'The description field must be string'],
+        ['status2'=>'Required','show'=>'Required',]);
         Test::create($data);
         return redirect('/example');
     }
@@ -68,8 +71,11 @@ class ExampleController extends Controller
     {
         $data=$request->validate([
             'name'=>'max:16|alpha|required',
-            'content'=>'alpha_num'
-        ],['name'=>'The field must be from 1-16']);
+            'content'=>'alpha_num',
+            'status2'=>'required|in:enable,disable',
+            'show'=>'required|in:1,0',
+        ],['name'=>'The field must be from 1-16'],
+    ['status2'=>'Required','show'=>'Required',]);
         Test::where('id',$id)->update($data);
         return redirect('/example');
     }

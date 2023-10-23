@@ -13,6 +13,8 @@ class Test extends Model
         'id',
         'name',
         'content',
+        'show',
+        'status2',
     ];
     public function getCreatedAtAttribute($value){
         return date('Y-m-D H',strtotime($value));

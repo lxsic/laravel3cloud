@@ -7,6 +7,8 @@ Index page <a href="example/create">Create</a>
         <td>
             <th>ID</th>
             <th>Name</th>
+            <th>Show</th>
+            <th>Status2</th>
             <th>Content</th>
             <th>Created At</th>
             <th>Updated At</th>
